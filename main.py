@@ -13,7 +13,7 @@ def read_number():
 while True:
     print("\nMenu:\n"
           "1. Add\n"
-          "2. Substract\n"
+          "2. Subtract\n"
           "3. Multiply\n"
           "4. Divide\n"
           "5. Evaluate\n"
