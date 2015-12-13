@@ -3,7 +3,7 @@ from calculator import Calculator
 calc = Calculator()
 
 def read_number():
-    number = input("Enter first number: ")
+    number = input("Enter number: ")
     try:
         number = float(number)
     except ValueError:
@@ -11,7 +11,7 @@ def read_number():
     return number
 
 while True:
-    print("Menu:\n"
+    print("\nMenu:\n"
           "1. Add\n"
           "2. Substract\n"
           "3. Multiply\n"
@@ -32,7 +32,7 @@ while True:
             print("Error: incorrect expression.\n")
             continue
 
-    else:
+    elif action in {'1', '2', '3', '4'}:
         try:
             x = read_number()
             y = read_number()
@@ -42,15 +42,17 @@ while True:
 
         if action == '1':
             result = calc.add(x, y)
-        if action == '2':
+        elif action == '2':
             result = calc.subtract(x, y)
-        if action == '3':
+        elif action == '3':
             result = calc.multiply(x, y)
-        if action == '4':
+        elif action == '4':
             try:
                 result = calc.divide(x, y)
             except ZeroDivisionError:
-                print("Error: incorrect number")
+                print("Error: division by zero")
                 continue
+    else:
+        continue
     print("Result: ", result)
 
