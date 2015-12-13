@@ -11,13 +11,13 @@ def read_number():
     return number
 
 while True:
-    print("\nMenu:\n"
-          "1. Add\n"
-          "2. Subtract\n"
-          "3. Multiply\n"
-          "4. Divide\n"
-          "5. Evaluate\n"
-          "0. Exit\n")
+    print("\n Menu: \n"
+          "1. Add \n"
+          "2. Subtract \n"
+          "3. Multiply \n"
+          "4. Divide \n"
+          "5. Evaluate \n"
+          "0. Exit \n")
 
     action = input("What do you want? ")
 
@@ -29,7 +29,7 @@ while True:
         try:
             result = calc.evaluate(expression)
         except SyntaxError:
-            print("Error: incorrect expression.\n")
+            print("Error: incorrect expression. \n")
             continue
 
     elif action in {'1', '2', '3', '4'}:
@@ -37,7 +37,7 @@ while True:
             x = read_number()
             y = read_number()
         except ValueError:
-            print("Error: incorrect number")
+            print("Error: incorrect number. \n")
             continue
 
         if action == '1':
@@ -50,7 +50,7 @@ while True:
             try:
                 result = calc.divide(x, y)
             except ZeroDivisionError:
-                print("Error: division by zero")
+                print("Error: division by zero. \n")
                 continue
     else:
         continue
