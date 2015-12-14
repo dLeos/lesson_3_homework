@@ -4,33 +4,21 @@ class Calculator:
 
     def add(self, x, y):
         """This function adds two numbers"""
-        try:
-            return float(x + y)
-        except:
-            raise SyntaxError
+        return float(x + y)
 
     def subtract(self, x, y):
         """This function subtracts two numbers"""
-        try:
-            return float(x - y)
-        except:
-            raise SyntaxError
+        return float(x - y)
 
     def multiply(self, x, y):
         """This function multiplies two numbers"""
-        try:
-            return float(x * y)
-        except:
-            raise SyntaxError
+        return float(x * y)
 
     def divide(self, x, y):
         """This function divides two numbers"""
         if y == 0:
             raise ZeroDivisionError
-        try:
-            return float(x / y)
-        except:
-            raise SyntaxError
+        return float(x / y)
 
     def evaluate(self, expression):
         """This function evaluate expression"""
