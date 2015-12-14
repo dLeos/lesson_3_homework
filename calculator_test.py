@@ -12,7 +12,7 @@ class CalculatorTest(TestCase):
     def test_add_correct(self, x, y, result):
         self.assertEqual(result, self.calc.add(x, y))
 
-    @genty_dataset(('ab', 7, TypeError), (5, 'cd', TypeError), ('ab', 'cd', ValueError))
+    @genty_dataset(('ab', 7, SyntaxError), (5, 'cd', SyntaxError), ('ab', 'cd', SyntaxError))
     def test_add_not_correct(self, x, y, result):
         self.assertRaises(result, lambda: self.calc.add(x, y))
 
@@ -20,7 +20,7 @@ class CalculatorTest(TestCase):
     def test_subtract_correct(self, x, y, result):
         self.assertEqual(result, self.calc.subtract(x, y))
 
-    @genty_dataset(('ab', 7, TypeError), (5, 'cd', TypeError), ('ab', 'cd', TypeError))
+    @genty_dataset(('ab', 7, SyntaxError), (5, 'cd', SyntaxError), ('ab', 'cd', SyntaxError))
     def test_subtract_not_correct(self, x, y, result):
         self.assertRaises(result, lambda: self.calc.subtract(x, y))
 
@@ -28,7 +28,7 @@ class CalculatorTest(TestCase):
     def test_multiply_correct(self, x, y, result):
         self.assertAlmostEqual(result, self.calc.multiply(x, y))
 
-    @genty_dataset(('ab', 7, ValueError), (5, 'cd', ValueError), ('ab', 'cd', TypeError))
+    @genty_dataset(('ab', 7, SyntaxError), (5, 'cd', SyntaxError), ('ab', 'cd', SyntaxError))
     def test_multiply_not_correct(self, x, y, result):
         self.assertRaises(result, lambda: self.calc.multiply(x, y))
 
@@ -36,7 +36,7 @@ class CalculatorTest(TestCase):
     def test_divide_correct(self, x, y, result):
         self.assertAlmostEqual(result, self.calc.divide(x, y))
 
-    @genty_dataset(('ab', 7, TypeError), (5, 'cd', TypeError), ('ab', 'cd', TypeError))
+    @genty_dataset(('ab', 7, SyntaxError), (5, 'cd', SyntaxError), ('ab', 'cd', SyntaxError))
     def test_divide_not_correct(self, x, y, result):
         self.assertRaises(result, lambda: self.calc.divide(x, y))
 
